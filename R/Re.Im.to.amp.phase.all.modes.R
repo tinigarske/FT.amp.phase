@@ -1,7 +1,7 @@
 ##' Calculate the amplitude and phase of several modes of Fourier
 ##' transforms given the real and imaginary parts of the modes.
 ##'
-##' .. content for \details{} ..
+##' Content for the details section. Still to be written.
 ##' @title Amplitude and pase of the full Fourier transform
 ##' @param FT matrix or dataframe of the modes of interest of several
 ##' Fourier transforms. Each individual FT is given in a row, and
@@ -11,7 +11,8 @@
 ##' @param n.time.points Number of time points for which the Fourier
 ##' transform was calculated. Default value is 512 ( = 8 years * 64
 ##' points per year).
-##' @return A matrix with amplitude and phase columns for each mode within the input data FT
+##' @return A matrix with amplitude and phase columns for each mode
+##' within the input data FT
 ##' @author Tini
 ##' @export
 Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
@@ -27,7 +28,7 @@ Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
   
   amp.phase = NULL
   for(i in 1:length(re.cols)) {
-    amp.phase = cbind(amp.phase, calc.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], n.time.points))
+    amp.phase = cbind(amp.phase, Re.Im.to.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], n.time.points))
     colnames(amp.phase)[ncol(amp.phase) + c(-1,0)] = paste0(colnames(amp.phase)[ncol(amp.phase) + c(-1,0)], re.modes[i])
   }
 
