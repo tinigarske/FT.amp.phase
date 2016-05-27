@@ -27,7 +27,7 @@ Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
   
   amp.phase = NULL
   for(i in 1:length(re.cols)) {
-    amp.phase = cbind(amp.phase, calc.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], nyears = nyears, ppyear = ppyear))
+    amp.phase = cbind(amp.phase, calc.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], n.time.points))
     colnames(amp.phase)[ncol(amp.phase) + c(-1,0)] = paste0(colnames(amp.phase)[ncol(amp.phase) + c(-1,0)], re.modes[i])
   }
 
