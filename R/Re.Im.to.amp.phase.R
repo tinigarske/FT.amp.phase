@@ -1,7 +1,7 @@
 ##' Calculate the amplitude and phase of a mode of a Fourier transform
 ##' given the real and imaginary parts of the mode.
 ##'
-##' .. content for \details{} ..
+##' Content for the details section - still to be written.
 ##' @title Amplitude and phase. 
 ##' @param Re Real part of the mode of interest of the Fourier
 ##' Transform. Can be a scalar or a vector.
