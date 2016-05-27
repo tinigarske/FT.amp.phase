@@ -27,12 +27,14 @@
 ##' n.time.points = (year.f - year.i + 1)*ppyear
 ##' 
 ##' ## reading in the data:
-##' FT = read.table(paste0(dat.dir, "FTfreqs_", year.i, "-", year.f, "_", ppyear, "ppyear_", file.type, "_adm1_", adm0, ".txt"), header = TRUE, sep = "\t", quote = "")
+##' FT = read.table(paste0(dat.dir, "FTfreqs_", year.i, "-", year.f, "_",
+##' ppyear, "ppyear_", file.type, "_adm1_", adm0, ".txt"), header = TRUE,
+##' sep = "\t", quote = "")
 ##' 
 ##' ## calculating the amplitude and phase for all modes:
 ##' amp.phase = Re.Im.to.amp.phase.all.modes(FT, n.time.points = n.time.points)
 ##' ## now you might want to cbind this to the original FT dataframe:
-##' FT = cbind(FT, amp.phase)
+##' FT = cbind(FT, data.frame(amp.phase))
 Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
   re.cols = grep("^Re", names(FT))
   re.modes = as.numeric(gsub("Re", "", names(FT)[re.cols]))
@@ -46,7 +48,7 @@ Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
   
   amp.phase = NULL
   for(i in 1:length(re.cols)) {
-    amp.phase = cbind(amp.phase, Re.Im.to.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], n.time.points))
+    amp.phase = cbind(amp.phase, Re.Im.to.amp.phase(Re = FT[, re.cols[i]], Im = FT[, im.cols[i]], n.time.points = n.time.points))
     colnames(amp.phase)[ncol(amp.phase) + c(-1,0)] = paste0(colnames(amp.phase)[ncol(amp.phase) + c(-1,0)], re.modes[i])
   }
 
