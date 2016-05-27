@@ -15,6 +15,24 @@
 ##' within the input data FT
 ##' @author Tini
 ##' @export
+##' @examples
+##' ## setting up some parameters:
+##' dat.dir = "//fi--didenas3/Dengue/Data/processed/adm1/FTs/"
+##' year.i = 2007
+##' year.f = 2014
+##' ppyear = 64
+##' file.type = "EVI"
+##' adm0 = "FRA"
+##' 
+##' n.time.points = (year.f - year.i + 1)*ppyear
+##' 
+##' ## reading in the data:
+##' FT = read.table(paste0(dat.dir, "FTfreqs_", year.i, "-", year.f, "_", ppyear, "ppyear_", file.type, "_adm1_", adm0, ".txt"), header = TRUE, sep = "\t", quote = "")
+##' 
+##' ## calculating the amplitude and phase for all modes:
+##' amp.phase = Re.Im.to.amp.phase.all.modes(FT, n.time.points = n.time.points)
+##' ## now you might want to cbind this to the original FT dataframe:
+##' FT = cbind(FT, amp.phase)
 Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
   re.cols = grep("^Re", names(FT))
   re.modes = as.numeric(gsub("Re", "", names(FT)[re.cols]))
@@ -34,3 +52,5 @@ Re.Im.to.amp.phase.all.modes = function(FT, n.time.points = 512) {
 
   return(amp.phase)
 }
+
+
