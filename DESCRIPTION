@@ -1,7 +1,10 @@
 Package: FT.amp.phase
-Title: Fourier Transform: Convert between Amplitude and Phase and Real and Imaginary Parts of Modes. 
+Title: Fourier Transform: Convert between Amplitude and Phase and Real and
+    Imaginary Parts of Modes
 Version: 0.1.0
 Authors@R: person("Tini", "Garske", email = "t.garske@imperial.ac.uk", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.2.5)
+Depends:
+    R (>= 3.2.5)
 License: GPL-2
+RoxygenNote: 5.0.1
