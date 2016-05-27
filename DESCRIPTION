@@ -1,9 +1,7 @@
 Package: FT.amp.phase
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Title: Fourier Transform: Convert between Amplitude and Phase and Real and Imaginary Parts of Modes. 
+Version: 0.1.0
+Authors@R: person("Tini", "Garske", email = "t.garske@imperial.ac.uk", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
 Depends: R (>= 3.2.5)
-License: What license is it under?
-Encoding: UTF-8
-LazyData: true
+License: GPL-2
