@@ -20,7 +20,7 @@
 Re.Im.to.amp.phase = function(Re, Im, n.time.points = 512) {
   if(length(Re) != length(Im)) stop("Re and Im must have the same length.")
   
-  amp = sqrt(Re^2 + Im^2)/(nyears*ppyear)
+  amp = sqrt(Re^2 + Im^2)/(n.time.points)
   phase = atan2(Im, Re)
   if(length(Re)==1) {
     return(c(amp = amp, phase = phase))
