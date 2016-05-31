@@ -17,7 +17,7 @@
 ##' phase for each entry of Re and Im.
 ##' @author Tini
 ##' @export
-Re.Im.to.amp.phase = function(Re, Im, n.time.points = 512) {
+FTcoeff.to.amp.phase = function(Re, Im, n.time.points = 512) {
   if(length(Re) != length(Im)) stop("Re and Im must have the same length.")
   
   amp = sqrt(Re^2 + Im^2)/(n.time.points)
