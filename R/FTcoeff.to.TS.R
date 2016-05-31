@@ -10,7 +10,7 @@
 ##' @return A matrix with the time series for each time point and Fourier transform. Time points are given in columns, individual Fourier transforms in rows, so dim(matrix) = c(nrow(FT), length(timepoints). 
 ##' @author Tini
 ##' @export
-##' examples
+##' @examples
 ##' ## setting up some parameters:
 ##' dat.dir = "//fi--didenas3/Dengue/Data/processed/adm1/FTs/"
 ##' year.i = 2007
