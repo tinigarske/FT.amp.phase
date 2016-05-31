@@ -31,7 +31,7 @@ cols.of.mode.dide.txt = function(FTnames) {
   im.cols = im.cols[match(re.modes, im.modes)]
   im.modes = im.modes[match(re.modes, im.modes)]
 
-  re.cols = c(grep("^const_term", names(FT)), re.cols)
+  re.cols = c(grep("^const_term", FTnames), re.cols)
   names(re.cols) = c(0, 1+re.modes)
   im.cols = c(NA, im.cols)
   names(im.cols) = c(0, 1+im.modes)
@@ -50,7 +50,7 @@ cols.of.mode.air.temp.paper = function(FTnames) {
   im.cols = im.cols[match(re.modes, im.cols)]
   im.modes = im.modes[match(re.modes, im.modes)]
 
-  re.cols = c(grep("^H0", names(FT)), re.cols)
+  re.cols = c(grep("^H0", FTnames), re.cols)
   names(re.cols) = c(0, re.modes)
   im.cols = c(NA, im.modes)
   names(im.cols) = c(0, im.modes)
